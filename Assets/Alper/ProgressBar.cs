@@ -10,29 +10,29 @@ public class ProgressBar : MonoBehaviour
 
     private void Start()
     {
-        // Timer'ý baþlat
+        // Timer'i baslat
         StartTimer();
     }
 
     private void Update()
     {
-        // Timer'ý güncelle
+        // Timeri guncelle
         countdownTime -= Time.deltaTime;
         timerSlider.value = countdownTime / 60f;
 
-        // Sayaç tamamlandý mý kontrol et
+        // Sayaci tamamlandi mi kontrol et
         if (countdownTime <= 0f)
         {
-            Debug.Log("Süre BÝTTÝ");
-            // Ýþlem tamamlandýðýnda ek iþlemleri buraya ekleyebilirsiniz.
+            Debug.Log("Sure BiTTi");
+            // islem tamamlandiginda ek islemleri buraya ekleyebilirsiniz.
         }
     }
 
     private void StartTimer()
     {
-        // Timer'ý baþlatmak için çaðrýlýr
+        // Timer'i baslatmak icin cagirilir
         countdownTime = 60f;
-        timerSlider.value = 1f; // Slider'ý tamamen doldur
+        timerSlider.value = 1f; // Slider'i tamamen doldur
     }
 
 }

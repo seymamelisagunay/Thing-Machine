@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/1GameSceneFuture.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Alper/UI.unity
+    guid: 0a2266e23189a8d40b9934f23d72fb44
+  - enabled: 1
+    path: Assets/Alper/finish.unity
+    guid: accd12175db7357468d744e533466869
   m_configObjects: {}

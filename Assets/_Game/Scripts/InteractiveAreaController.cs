@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractiveAreaManager : MonoBehaviour
+public class InteractiveAreaController : MonoBehaviour
 {
 
     public GameObject ButtonE;

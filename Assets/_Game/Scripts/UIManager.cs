@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private SceneTime selectedTime;
     public GameObject DateCanvas;
+    public TMP_InputField inputField;
+    
     private int _number;
     public void FinishLevel()
     {
@@ -22,7 +25,7 @@ public class UIManager : MonoBehaviour
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
                     DateCanvas.SetActive(true);
-                    //yazi yazcak kullanici entera bascak
+                    _number = writeToUI();
                     if(_number == 19)
                         PlayerPrefs.SetInt("future19",1);
                     else
@@ -35,7 +38,7 @@ public class UIManager : MonoBehaviour
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
                     DateCanvas.SetActive(true);
-                    //yazi yazcak kullanici entera bascak
+                    _number = writeToUI();
                     if(_number == 11)
                         PlayerPrefs.SetInt("present11",1);
                     else
@@ -48,14 +51,15 @@ public class UIManager : MonoBehaviour
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
                     DateCanvas.SetActive(true);
-                    //yazi yazcak kullanici entera bascak
+                    _number = writeToUI();
                     if(_number == 23)
                         PlayerPrefs.SetInt("past23",1);
                 }
                 if (PlayerPrefs.GetInt("future19") == 1 && PlayerPrefs.GetInt("present11") == 1 &&
                     PlayerPrefs.GetInt("past23") == 1)
                 {
-                    //oyun bitti bitti sahnesini ac
+                    //tum yazdigi sayilari tarih gibi goster ui
+                    // sonra oyunu bitircek ui goster
                 }
                 else
                 {
@@ -63,12 +67,21 @@ public class UIManager : MonoBehaviour
                     PlayerPrefs.SetInt("present11",0);
                     PlayerPrefs.SetInt("past23",0);
                 }
-                //digersahneye gec
+                //ilk sahneye gec
                 break;
             
             default:
                 Debug.Log("Geçersiz");
                 break;
         }
+    }
+    
+    public int writeToUI()
+    {
+        if (inputField == null)
+            return 0;
+        int.TryParse(inputField.text, out var num);
+        return num;
+
     }
 }

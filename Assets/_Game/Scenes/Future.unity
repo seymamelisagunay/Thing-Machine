@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &27732040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ RectTransform:
   - {fileID: 1479187789}
   - {fileID: 1247866907}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1241,7 +1241,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &476142664
 GameObject:
@@ -1319,6 +1319,52 @@ RectTransform:
   m_AnchoredPosition: {x: -1, y: 0.5}
   m_SizeDelta: {x: -2, y: 1}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!1 &476618774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476618776}
+  - component: {fileID: 476618775}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &476618775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476618774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ccf502a6e6a124f9b84f109da24d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedTime: 0
+  DateCanvas: {fileID: 0}
+--- !u!4 &476618776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476618774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.2157006, y: -3.2162979, z: -5.033672}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &556329075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 789571365}
   countdownTime: 60
-  dateCanvas: {fileID: 27732039}
+  _uiIManager: {fileID: 0}
 --- !u!114 &752045026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2056,7 +2102,7 @@ Transform:
   - {fileID: 3355471323995158225}
   - {fileID: 206996802}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &896180708
 GameObject:
@@ -2297,7 +2343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6512581303971195892, guid: 496147b11034dbf4d8dd6c749d7bc17b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6512581303971195892, guid: 496147b11034dbf4d8dd6c749d7bc17b, type: 3}
       propertyPath: m_LocalPosition.x

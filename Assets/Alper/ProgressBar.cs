@@ -35,7 +35,7 @@ public class ProgressBar : MonoBehaviour
     private void StartTimer()
     {
         // Timer'i baslatmak icin cagirilir
-        countdownTime = 60f;
+        countdownTime = 15f;
         timerSlider.value = 1f; // Slider'i tamamen doldur
     }
 

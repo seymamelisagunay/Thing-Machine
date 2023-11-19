@@ -15,6 +15,7 @@ public class KinematicRotate : MonoBehaviour
 
     private void Start()
     {
+        SetmachineIsRotating(0);
         if(isClockFirstStart)
             StartRotation(60, clockRotate, 1, 1);
     }
@@ -28,16 +29,25 @@ public class KinematicRotate : MonoBehaviour
     {
         Vector3 fromRotation = turnTool.transform.localRotation.eulerAngles;
         Vector3 toRotation = fromRotation + new Vector3(0, direction * 360 * speedX, 0);
-        turnTool.transform.DOLocalRotate(toRotation, workTime, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetId("ClockTween");
-        
+        if (turnTool.CompareTag("clock"))
+        {
+            turnTool.transform.DOLocalRotate(toRotation, workTime, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetId("clockTween");
+        }
+
         if (turnTool.CompareTag("machine"))
-            SetmachineIsRotating(-1);
+        {
+            turnTool.transform.DOLocalRotate(toRotation, workTime, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetId("machineTween");
+        }
+     
     }
 
-    public void StopRotation(GameObject stopTool)
+    public void StopRotationClock()
     {
-        if (stopTool == null) return;
-        DOTween.Kill(stopTool);
+        DOTween.Kill("clockTween");
+    }
+    public void StopRotationmachine()
+    {
+        DOTween.Kill("machineTween");
     }
     static public void SetmachineIsRotating(int newValue)
     {

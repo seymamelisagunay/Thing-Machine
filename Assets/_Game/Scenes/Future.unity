@@ -1933,7 +1933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 789571365}
-  countdownTime: 60
+  countdownTime: 25
   _uiIManager: {fileID: 476618775}
 --- !u!114 &752045026
 MonoBehaviour:
@@ -3399,7 +3399,6 @@ GameObject:
   - component: {fileID: 1270084798}
   - component: {fileID: 1270084797}
   - component: {fileID: 1270084796}
-  - component: {fileID: 1270084799}
   m_Layer: 0
   m_Name: machine_core (1)
   m_TagString: machine
@@ -3488,21 +3487,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270084794}
   m_Mesh: {fileID: -5495902117074765545, guid: 9b85e958959bcdb469601112881fe058, type: 3}
---- !u!114 &1270084799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270084794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d31097790aa87748bc4e468de526dcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clockRotate: {fileID: 0}
-  machineRotate: {fileID: 0}
-  isClockFirstStart: 0
 --- !u!1 &1274829150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,7 +4271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonE: {fileID: 476142664}
-  interactiveObject: {fileID: 1616706109}
+  interactiveObject: {fileID: 1270084794}
   machine: {fileID: 1270084794}
   isWorking10Seconds: 1
   rotateLeft: 0
@@ -4296,7 +4280,7 @@ MonoBehaviour:
   rotateStop: 0
   addGravity: 0
   _addGravity: {fileID: 0}
-  _kinematicRotate: {fileID: 1270084799}
+  _kinematicRotate: {fileID: 6902815467103679809}
 --- !u!65 &1616706112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5090,7 +5074,7 @@ MonoBehaviour:
   rotateRight: 0
   rotateFast: 0
   rotateStop: 0
-  addGravity: 0
+  addGravity: 1
   _addGravity: {fileID: 556329076}
   _kinematicRotate: {fileID: 0}
 --- !u!65 &1909338009
@@ -5611,16 +5595,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonE: {fileID: 476142664}
-  interactiveObject: {fileID: 0}
-  machine: {fileID: 0}
+  interactiveObject: {fileID: 2974861803769827646}
+  machine: {fileID: 1270084794}
   isWorking10Seconds: 0
   rotateLeft: 0
   rotateRight: 0
   rotateFast: 0
-  rotateStop: 0
+  rotateStop: 1
   addGravity: 0
   _addGravity: {fileID: 0}
-  _kinematicRotate: {fileID: 0}
+  _kinematicRotate: {fileID: 6902815467103679809}
 --- !u!33 &3861530873142735749
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5726,7 +5710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockRotate: {fileID: 2974861803769827646}
   machineRotate: {fileID: 0}
-  isClockFirstStart: 0
+  isClockFirstStart: 1
 --- !u!54 &6902815467103679810
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,19 +20,26 @@ public class UIManager : MonoBehaviour
     
     private string _number;
     private bool check = false;
+    private bool _buttonPressed = false;
+
+    
+
     public void FinishLevel()
     {
         switch (selectedTime)
         {
             case SceneTime.Future:
+                PlayerPrefs.SetInt("future19",0);
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
+                    Debug.Log("dogruuuuuuuuuuuuuu");
                     DateCanvas.SetActive(true);
-                    check = true;
+                    StartCoroutine(WaitForEnterPress());
                     if(_number == "19")
                         PlayerPrefs.SetInt("future19",1);
                     else
                         PlayerPrefs.SetInt("future19",0);
+                    
                 }
                 SceneManager.LoadScene(4);
                 break;
@@ -41,6 +49,7 @@ public class UIManager : MonoBehaviour
                 {
                     DateCanvas.SetActive(true);
                     check = true;
+                    StartCoroutine(WaitForEnterPress());
                     if(_number == "11")
                         PlayerPrefs.SetInt("present11",1);
                     else
@@ -50,6 +59,7 @@ public class UIManager : MonoBehaviour
                 break;
             
             case SceneTime.Past:
+                Debug.Log("passt");
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
                     DateCanvas.SetActive(true);
@@ -87,16 +97,32 @@ public class UIManager : MonoBehaviour
         return num;
 
     }
-    void Update()
+    /*void Update()
     {
         if (check)
         {
+            Debug.Log('a');
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
             {
                 Debug.Log("Enter tuşuna basıldı!");
                 _number = inputField.text;
                 check = false;
+                StopCoroutine(WaitFor60Seconds());
             }
+        }
+        
+    }*/
+    IEnumerator WaitForEnterPress()
+    {
+        while (!_buttonPressed)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                Debug.Log("Enter tuşuna basıldı!");
+                _number = inputField.text;
+                _buttonPressed = true;
+            }
+            yield return null;
         }
         
     }

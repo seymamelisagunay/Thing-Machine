@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 789571365}
   countdownTime: 60
-  _uiIManager: {fileID: 0}
+  _uiIManager: {fileID: 476618775}
 --- !u!114 &752045026
 MonoBehaviour:
   m_ObjectHideFlags: 0

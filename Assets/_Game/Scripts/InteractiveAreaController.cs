@@ -40,13 +40,16 @@ public class InteractiveAreaController : MonoBehaviour
                 }
                 else if (isWorking10Seconds)
                 {
-                    _kinematicRotate.StartRotation(10,interactiveObject, 1, 1);
+                    _kinematicRotate.StartRotation(10,interactiveObject, 5, 1);
+                    KinematicRotate.SetmachineIsRotating(-1);
                 }
                 else if (rotateStop)
                 {
-                    _kinematicRotate.StopRotation(interactiveObject);
+                    _kinematicRotate.StopRotationClock();
                     if (KinematicRotate.isWorkingMachine == -1)
                     {
+                        _kinematicRotate.StopRotationmachine();
+                        _kinematicRotate.StartRotation(55,machine, 5, 1);
                         KinematicRotate.SetmachineIsRotating(1);
                     }
                 }

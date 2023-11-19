@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class UIManager : MonoBehaviour
                     else
                         PlayerPrefs.SetInt("future19",0);
                 }
-                //diger sahneye gec
+                SceneManager.LoadScene(4);
                 break;
             
             case SceneTime.Present:
@@ -45,7 +46,7 @@ public class UIManager : MonoBehaviour
                     else
                         PlayerPrefs.SetInt("present11",0);
                 }
-                //digersahneye gec
+                SceneManager.LoadScene(5);
                 break;
             
             case SceneTime.Past:
@@ -67,6 +68,7 @@ public class UIManager : MonoBehaviour
                     PlayerPrefs.SetInt("future19",0);
                     PlayerPrefs.SetInt("present11",0);
                     PlayerPrefs.SetInt("past23",0);
+                    SceneManager.LoadScene(3);
                 }
                 //ilk sahneye gec
                 break;

@@ -484,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 5982044391865144870}
   countdownTime: 60
+  _uiIManager: {fileID: 0}
 --- !u!1 &603604139
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1261391200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1607,7 +1608,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonE: {fileID: 603604139}
+  interactiveObject: {fileID: 0}
+  machine: {fileID: 0}
+  isWorking10Seconds: 0
+  rotateLeft: 0
+  rotateRight: 0
+  rotateFast: 0
+  rotateStop: 0
+  addGravity: 0
   _addGravity: {fileID: 1352318144}
+  _kinematicRotate: {fileID: 0}
 --- !u!54 &1634409133
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1906,7 +1916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1831454832
 MonoBehaviour:
   m_ObjectHideFlags: 0

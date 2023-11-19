@@ -7,25 +7,29 @@ public class ProgressBar : MonoBehaviour
 {
     public Slider timerSlider;
     public float countdownTime = 60f;
+    public UIManager _uiIManager;
 
+
+    private bool _stopTimer;
     private void Start()
     {
-        // Timer'i baslat
         StartTimer();
     }
 
     private void Update()
     {
-        // Timeri guncelle
-        countdownTime -= Time.deltaTime;
-        timerSlider.value = countdownTime / 60f;
-
-        // Sayaci tamamlandi mi kontrol et
-        if (countdownTime <= 0f)
+        if (!_stopTimer)
         {
-            Debug.Log("Sure BiTTi");
-            // islem tamamlandiginda ek islemleri buraya ekleyebilirsiniz.
+            countdownTime -= Time.deltaTime;
+            timerSlider.value = countdownTime / 60f;
+            
+            if (countdownTime <= 0f)
+            {
+                _stopTimer = true;
+                _uiIManager.FinishLevel();
+            }
         }
+        
     }
 
     private void StartTimer()

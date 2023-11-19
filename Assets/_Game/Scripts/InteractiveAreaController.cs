@@ -5,10 +5,22 @@ using UnityEngine;
 
 public class InteractiveAreaController : MonoBehaviour
 {
-
+    //[HideInInspector] public bool isWorkingMachine;
+    
     public GameObject ButtonE;
+    public GameObject interactiveObject = null;
+    public GameObject machine = null;
+
+    public bool isWorking10Seconds;
+    public bool rotateLeft;
+    public bool rotateRight;
+    public bool rotateFast;
+    public bool rotateStop;
+    public bool addGravity;
     
     [SerializeField] private AddGravity _addGravity = null;
+    [SerializeField] private KinematicRotate _kinematicRotate = null;
+    
     
     private void OnTriggerEnter(Collider other)
     { 
@@ -22,13 +34,24 @@ public class InteractiveAreaController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (_addGravity != null)
+                if (addGravity)
                 {
                     _addGravity.addGravityObject();
-                    DestroyArea();
+                }
+                else if (isWorking10Seconds)
+                {
+                    _kinematicRotate.StartRotation(10,interactiveObject, 1, 1);
+                }
+                else if (rotateStop)
+                {
+                    _kinematicRotate.StopRotation(interactiveObject);
+                    if (KinematicRotate.isWorkingMachine == -1)
+                    {
+                        KinematicRotate.SetmachineIsRotating(1);
+                    }
                 }
                 
-                //buraya ekle
+                DestroyArea();
             }
         }
         

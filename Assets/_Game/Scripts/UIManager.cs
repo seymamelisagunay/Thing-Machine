@@ -14,9 +14,10 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private SceneTime selectedTime;
     public GameObject DateCanvas;
-    public TMP_InputField inputField;
+    public TMP_Text inputField;
     
-    private int _number;
+    private string _number;
+    private bool check = false;
     public void FinishLevel()
     {
         switch (selectedTime)
@@ -25,8 +26,8 @@ public class UIManager : MonoBehaviour
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
                     DateCanvas.SetActive(true);
-                    _number = writeToUI();
-                    if(_number == 19)
+                    check = true;
+                    if(_number == "19")
                         PlayerPrefs.SetInt("future19",1);
                     else
                         PlayerPrefs.SetInt("future19",0);
@@ -38,8 +39,8 @@ public class UIManager : MonoBehaviour
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
                     DateCanvas.SetActive(true);
-                    _number = writeToUI();
-                    if(_number == 11)
+                    check = true;
+                    if(_number == "11")
                         PlayerPrefs.SetInt("present11",1);
                     else
                         PlayerPrefs.SetInt("present11",0);
@@ -51,8 +52,8 @@ public class UIManager : MonoBehaviour
                 if (KinematicRotate.isWorkingMachine == 1)
                 {
                     DateCanvas.SetActive(true);
-                    _number = writeToUI();
-                    if(_number == 23)
+                    check = true;
+                    if(_number == "23")
                         PlayerPrefs.SetInt("past23",1);
                 }
                 if (PlayerPrefs.GetInt("future19") == 1 && PlayerPrefs.GetInt("present11") == 1 &&
@@ -83,5 +84,18 @@ public class UIManager : MonoBehaviour
         int.TryParse(inputField.text, out var num);
         return num;
 
+    }
+    void Update()
+    {
+        if (check)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                Debug.Log("Enter tuşuna basıldı!");
+                _number = inputField.text;
+                check = false;
+            }
+        }
+        
     }
 }
